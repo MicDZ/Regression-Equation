@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>最小二乘法 Powered by MicDZ</title>
+		<link rel="icon" type="image/png" href="https://www.micdz.cn/img/h.jpeg" />
+	</head>
+	<body>
+		
+		b估=<p id="bgu"></p>
+	
+		a估=<p id="agu"></p>
+		
+	
+	
+	<script>
+		var x = new Array(),y = new Array(),n;
+		n=prompt("输入二元组(xi,yi)的个数n",0);
+
+		for(var i=1; i<=n; i++) x[i]=prompt("请依次输入x",0);
+
+		for(var i=1; i<=n; i++) y[i]=prompt("请依次输入y",0);
+
+		
+		var a=0.0,b=0.0,xb=0.0,yb=0.0;
+		for(var i=1; i<=n; i++) xb+=x[i]/n,yb+=y[i]/n;
+		for(var i=1; i<=n; i++) a=a+(x[i]-xb)*(y[i]-yb);
+		for(var i=1; i<=n; i++) b=b+(x[i]-xb)*(x[i]-xb);
+		var ans1=1.0*a/b,ans2=(yb-1.0*ans1*xb);
+
+		document.getElementById("bgu").innerHTML = ans1.toFixed(6);
+		document.getElementById("agu").innerHTML = ans2.toFixed(6);
+
+	</script>
+
+	
+	</body>
+</html>
